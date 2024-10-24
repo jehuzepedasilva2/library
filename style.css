@@ -32,7 +32,7 @@ h2 {
   border-radius: 10px;
   display: flex;
   flex-wrap: wrap;
-  padding: 0;
+  padding: 10px;
   margin: 0;
   box-sizing: border-box;
 }
@@ -135,6 +135,12 @@ h4, h5, h6 {
   box-shadow: 2px 8px 20px;
   flex: 0 0 calc(16.66% - 20px);
   box-sizing: border-box;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.1); /* Slightly scale up the container */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Add a shadow for a pop effect */
 }
 
 form, form > div {
