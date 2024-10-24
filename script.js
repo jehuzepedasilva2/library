@@ -23,6 +23,24 @@ confirmButton.addEventListener("click", (e) => {
 
 function deleteBook(e) {
   const index = e.target.id;
+  document.querySelectorAll(".delete-button svg path")[index].remove
+  document.querySelectorAll(".delete-button svg")[index].remove();
+  document.querySelectorAll(".card")[index].remove();
+  if (index < library.length) { 
+    library.splice(index, 1);
+  }
+
+  const cardsAgain = document.querySelectorAll(".card");
+  const svgsAgain = document.querySelectorAll(".delete-button svg");
+  const pathsAgain = document.querySelectorAll(".delete-button svg path")
+
+  buttonNum = 0;
+  for (let i = 0; i < cardsAgain.length; i++) {
+    cardsAgain[i].id = `div-${buttonNum}`;
+    svgsAgain[i].id = `${buttonNum}`;
+    pathsAgain[i].id = `${buttonNum}`;
+    buttonNum++;
+  }
 }
 
 function Book(author, title, numPages, isRead) {
@@ -34,6 +52,7 @@ function Book(author, title, numPages, isRead) {
 
 function addToLibrary(book) {
   const div = document.createElement("div");
+  div.id = `div-${buttonNum}`;
   div.classList.add("card");
 
   const title = document.createElement("h4");
@@ -60,7 +79,6 @@ function addToLibrary(book) {
   const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
   path.setAttribute("d", "M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z");
   path.id = `${buttonNum}`;
-
   library[buttonNum] = book;
   buttonNum++;
 
@@ -82,33 +100,32 @@ function addToLibrary(book) {
   formDiv.appendChild(headerDiv);
 
   const buttonDiv = document.createElement("div");
+  buttonDiv.classList.add("toggle-div");
   
   const buttonYes = document.createElement("button");
   buttonYes.id = "b-000";
-  buttonYes.textContent = "YES";
-  buttonYes.addEventListener("click", (e) => {
-    const isRead = handleCardButton(e);
-    if (isRead) {
-      div.style.cssText = "border-left: 10px solid #0ea5e9";
-      book.isRead = true;
-    } else {
-      div.style.cssText = "border-left: 10px solid #be123c";
-      book.isRead = false
-    }
-  });
+  buttonYes.textContent = "NO";
+
   const buttonNo = document.createElement("button");
   buttonNo.id = "b-001";
-  buttonNo.textContent = "NO";
-  buttonNo.addEventListener("click", (e) => {
-    const isRead = handleCardButton(e);
-    if (isRead) {
-      div.style.cssText = "border-left: 10px solid blue";
-      book.isRead = true;
-    } else {
-      div.style.cssText = "border-left: 10px solid red";
-      book.isRead = false
-    }
-  })
+  buttonNo.classList.add("active-button")
+  buttonNo.textContent = "YES";
+
+  buttonYes.addEventListener("click", () => {
+    div.style.cssText = "border-left: 20px solid red";
+    book.isRead = false;
+    buttonDiv.classList.remove('active-button');
+    buttonYes.classList.add('active-button');
+    buttonNo.classList.remove('active-button');
+  });
+
+  buttonNo.addEventListener("click", () => {
+    div.style.cssText = "border-left: 20px solid #0ea5e9";
+    book.isRead = true;
+    buttonDiv.classList.add('active-button');
+    buttonYes.classList.remove('active-button');
+    buttonNo.classList.add('active-button');
+  });
 
   buttonDiv.appendChild(buttonYes);
   buttonDiv.appendChild(buttonNo);
@@ -117,14 +134,6 @@ function addToLibrary(book) {
 
   div.appendChild(formDiv);
   cards.appendChild(div);
-}
-
-function handleCardButton(e) {
-  const id = e.target.id;
-  if (id === "b-000") {
-    return true
-  }
-  return false;
 }
 
 const addButton = document.createElement("button");
