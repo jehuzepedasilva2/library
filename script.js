@@ -60,7 +60,7 @@ function addToLibrary(book) {
   const author = document.createElement("h5");
   author.textContent = `By: ${book.author}`;
   const pages = document.createElement("h6");
-  pages.textContent = `Number of Pages: ${book.numPages}`;
+  pages.textContent = `${book.numPages} pages`;
 
   const deleteButton = document.createElement("button");
   deleteButton.classList.add("delete-button");
@@ -93,9 +93,11 @@ function addToLibrary(book) {
   })
 
   const formDiv = document.createElement("div");
+  formDiv.classList.add("read-div");
   
   const headerDiv = document.createElement("div");
   headerDiv.textContent = "Read?";
+  headerDiv.style.cssText = "font-weight: bold; margin-bottom: 8px;";
 
   formDiv.appendChild(headerDiv);
 
@@ -136,16 +138,13 @@ function addToLibrary(book) {
   cards.appendChild(div);
 }
 
-const addButton = document.createElement("button");
-addButton.classList.add("book-btn");
-addButton.textContent = "ADD NEW BOOK";
+// const addButton = document.createElement("button");
+// addButton.classList.add("book-btn");
+// addButton.textContent = "ADD NEW BOOK";
+const addButton = document.querySelector(".book-btn")
 addButton.addEventListener("click", () => {
   addBookDialog.showModal();
 });
 
-htmlBody.appendChild(addButton);
+// htmlBody.appendChild(addButton);
 htmlBody.appendChild(cards)
-
-library.forEach(book => {
-  console.log(book);
-})

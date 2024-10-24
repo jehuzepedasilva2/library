@@ -4,13 +4,19 @@
 
 body {
   text-align: center;
-  background-color: #1f2937;
+  margin: 0;
+  padding: 0;
+}
+
+.top-page {
+  padding-top: 10px;
+  box-shadow: 2px 8px 8px #888888;
 }
 
 h2 {
   padding: 0;
   margin: 0;
-  color: white;
+  /* color: white; */
 }
 
 .book-btn {
@@ -25,7 +31,6 @@ h2 {
 .cards {
   border-radius: 10px;
   display: flex;
-  background-color: white;
   flex-wrap: wrap;
   padding: 0;
   margin: 0;
@@ -52,6 +57,12 @@ input[type="radio"] {
   border-radius: 10px;
 }
 
+.read-div {
+  margin: 8px;
+  display: flex;
+  justify-content: center;
+}
+
 #b-000, #b-001 {
   appearance: none;
   border: none;
@@ -69,7 +80,7 @@ input[type="radio"] {
 .toggle-div {
   position: relative;
   border: 1.5px solid black;
-  margin: 0 auto;
+  margin-left: 10px;
   width: 55px;
   height: 28px;
   border-radius: 50px;
@@ -116,13 +127,14 @@ h4, h5, h6 {
   position: relative;
   background-color: #f9fafb;
   border-left: 20px solid red;
-  border-radius: 10px;
-  padding: 20px 20px 20px 0; /* Simplified padding */
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding: 20px 20px 20px 0;
   margin: 10px;
   /* h-offset v-offset blur spread */
   box-shadow: 2px 8px 20px;
-  flex: 0 0 calc(16.66% - 20px); /* Adjust percentage width + margin */
-  box-sizing: border-box; /* Include padding and border in the width */
+  flex: 0 0 calc(16.66% - 20px);
+  box-sizing: border-box;
 }
 
 form, form > div {
