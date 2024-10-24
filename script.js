@@ -1,4 +1,4 @@
-const htmlBody = document.querySelector("body");
+const body = document.querySelector("body");
 const addBookDialog = document.querySelector("dialog");
 const confirmButton = addBookDialog.querySelector("#confirm-btn");
 const cards = document.createElement("div");
@@ -138,13 +138,9 @@ function addToLibrary(book) {
   cards.appendChild(div);
 }
 
-// const addButton = document.createElement("button");
-// addButton.classList.add("book-btn");
-// addButton.textContent = "ADD NEW BOOK";
 const addButton = document.querySelector(".book-btn")
 addButton.addEventListener("click", () => {
   addBookDialog.showModal();
 });
 
-// htmlBody.appendChild(addButton);
-htmlBody.appendChild(cards)
+body.appendChild(cards)
