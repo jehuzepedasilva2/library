@@ -3,11 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Londrina+Sketch&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./style.css">
   <script src="./script.js" defer></script>
   <title>Document</title>
 </head>
 <body>
-  
+  <h2>Your Library</h2>
+  <dialog class="dialog">
+    <form action="">
+      <div>
+        <label for="title">Book Title:</label>
+        <input type="text" id="title" name="book_title">
+      </div>
+      <div>
+        <label for="author">Book Author:</label>
+        <input type="text" name="book_author" id="author">
+      </div>
+      <div>
+        <label for="num-pages">Number of Pages</label>
+        <input type="number" name="number_pages" id="num-pages" min="0">
+      </div>
+      <div>
+        <button class="dial-btn" value="cancel" formmethod="dialog">Cancel</button>
+        <button class="dial-btn" id="confirm-btn" value="default">Confirm</button>
+      </div>
+    </form>
+  </dialog>
 </body>
 </html>

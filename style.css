@@ -1,0 +1,102 @@
+* {
+  font-family: "Playwrite GB S";
+}
+
+body {
+  text-align: center;
+  background-color: #1f2937;
+}
+
+h2 {
+  padding: 0;
+  margin: 0;
+  color: white;
+}
+
+.book-btn {
+  margin: 20px;
+  background-color: #1f2937;
+  border: 1px solid white;
+  border-radius: 20px;
+  color: white;
+  padding: 10px;
+}
+
+.cards {
+  margin: 0 auto;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  gap: 12px;
+  width: 90.6vw;
+  height: 90vh;
+  background-color: #9ca3af;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
+.dialog {
+  border: none;
+  border-radius: 10px;
+}
+
+label + input {
+  margin-left: 10px;
+}
+
+input[type="radio"] {
+  margin-bottom: 20px;
+}
+
+.dial-btn {
+  padding: 8px;
+  background-color: white;
+  border: 1px solid #9ca3af;
+  border-radius: 10px;
+}
+
+#b-000, #b-001 {
+  margin-right: 10px;
+}
+
+h4 {
+  display: inline-block;
+}
+
+h4, h5, h6 {
+  padding: 10px;
+  margin: 0px;
+}
+
+.card {
+  position: relative;
+  width: max-content;
+  height: max-content;
+  background-color: #f9fafb;
+  border-left: 10px solid white;
+  border-radius: 10px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  padding-left: 10px;
+  /* h-offset v-offset blur spread */
+  box-shadow: 2px 8px 20px;
+}
+
+form, form > div {
+  padding: 8px;
+}
+
+.delete-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  appearance: none;
+  border: none;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.delete-button:active, .book-btn:active {
+  opacity: 0.5;
+}
