@@ -1,5 +1,5 @@
 const body = document.querySelector("body");
-const addBookDialog = document.querySelector("dialog");
+const addBookDialog = document.querySelector(".dialog-01");
 const confirmButton = addBookDialog.querySelector("#confirm-btn");
 const cards = document.createElement("div");
 cards.classList.add("cards");
@@ -135,6 +135,7 @@ function addToLibrary(book) {
   formDiv.appendChild(buttonDiv);
 
   div.appendChild(formDiv);
+
   cards.appendChild(div);
 }
 
